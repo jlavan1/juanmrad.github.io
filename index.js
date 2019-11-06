@@ -32,15 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
       'https://www.omdbapi.com/?apikey=3430a78&s=' + urlEncodedSearchString
       ).then(function (response){
         console.log(response.data.Search);
-        renderMovies(response.data.Search);
+        var content = document.getElementById('movies-container');
+        content.innerHTML = renderMovies(response.data.Search);
     });
-
   })
-
-  
 });
-
-
 
 function saveToWatchlist(imdbID) {
   var movie = movieData.find(function (currentMovie) {
