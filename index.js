@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'https://www.omdbapi.com/?apikey=3430a78&s=' + urlEncodedSearchString
       ).then(function (response){
         console.log(response);
-        // renderMovies();
+        renderMovies(response.data.Search);
     });
 
   })
