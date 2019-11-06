@@ -1,3 +1,5 @@
+var movieData = [];
+
 document.addEventListener('DOMContentLoaded', function() {
 
   function renderMovies(movieArray) {
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
       'https://www.omdbapi.com/?apikey=3430a78&s=' + urlEncodedSearchString
       ).then(function (response){
         console.log(response.data.Search);
+        movieData = response.data.Search;
         var content = document.getElementById('movies-container');
         content.innerHTML = renderMovies(response.data.Search);
     });
