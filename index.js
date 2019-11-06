@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     axios.get(
       'https://www.omdbapi.com/?apikey=3430a78&s=' + urlEncodedSearchString
       ).then(function (response){
-        console.log(response);
+        console.log(response.data.Search);
         renderMovies(response.data.Search);
     });
 
